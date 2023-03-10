@@ -36,8 +36,27 @@ class Rectangle:
         pass
 
 class Square(Rectangle):
-    pass
+    def __init__(self, side):
+        super().__init__(side, side) # set width and height at the same lenght of side
 
+    def __repr__(self):
+        return f"Square(side={self.width})" # può richiamare uno tra width e height che ritorna la lunghezza di un lato del quadrato
+
+    def set_side(self, side):
+        super().__init__(side, side)
+    
+    def set_width(self, side):
+        super().set_width(side)
+        super().set_height(side)
+    
+    def set_height(self, side):
+        super().set_width(side)
+        super().set_height(side)
 
 rect = Rectangle(10, 5)
-print(rect.get_picture())
+sq = Square(9)
+print(rect)
+print(sq)
+sq.set_side(5)
+print(sq)
+print(sq.get_picture())
