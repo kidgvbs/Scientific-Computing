@@ -44,4 +44,5 @@ def arithmetic_arranger(problems, visual_results = False):
 
     return arranged_problems
 
+## TEST ##
 print(arithmetic_arranger(["32 - 8222", "10 + 10", "978 - 431"], True))

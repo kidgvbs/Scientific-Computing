@@ -3,7 +3,7 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def __repr__(self): # è un metodo speciale che viene chiamato quando si desidera ottenere una rappresentazione stringa di un oggetto
+    def __repr__(self): # __str__ deve restituire un output leggibile dall'uomo, mentre __repr__ deve restituire un output che può essere interpretato da Python.
         return f"Rectangle(width={self.width}, height={self.height})"
     
     def set_width(self, width):
@@ -57,7 +57,7 @@ class Square(Rectangle):
         super().set_width(side)
         super().set_height(side)
 
-# test
+## TEST ##
 rect = Rectangle(10, 5)
 sq = Square(9)
 print(rect)
