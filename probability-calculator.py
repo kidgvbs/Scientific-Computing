@@ -13,17 +13,17 @@ class Hat:
     def draw(self, n_balls):
         if n_balls > len(self.contents):
             return self.contents
-        else:
-            balls_drawn = []
-            for i in range(n_balls):
-                ball_index = random.randint(0, len(self.contents)-1)
-                balls_drawn.append(self.contents.pop(ball_index))
-            return balls_drawn
+        
+        balls_drawn = []
+        for i in range(n_balls):
+            ball_index = random.randint(0, len(self.contents)-1)
+            balls_drawn.append(self.contents.pop(ball_index))
+        return balls_drawn
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
 # hat: Un oggetto cappello contenente palline che dovrebbero essere copiate all'interno della funzione.
 # expected_balls: indica il gruppo esatto di palline che tentiamo di attingere dal cappello per l'esperimento. Ad esempio, per determinare la probabilità di pescare 2 palline blu e 1 pallina rossa dal cappello, imposta expected_balls a {"blue":2, "red":1}.
-# num_balls_drawn: Il numero di palline da pescare dal cappello in ogni esperimento.c
+# num_balls_drawn: Il numero di palline da pescare dal cappello in ogni esperimento
 # num_experiments: Il numero di esperimenti da eseguire. (Più esperimenti eseguiti, più precisa sarà la probabilità approssimativa.)
     successful_experiments = 0
 
