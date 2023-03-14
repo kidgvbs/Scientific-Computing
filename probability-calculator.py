@@ -36,13 +36,11 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
         hat_copy = copy.deepcopy(hat) # deepcopy -> crea una nuova instanza dell'oggetto originale
         drawn_balls = hat_copy.draw(num_balls_drawn) # lista delle palline pescate dal cappello
         success = True
-        for ball in expected_balls_list:
-            if ball not in drawn_balls:
+        for ball in expected_balls_list: # itera su expected_balls_list 
+            if ball not in drawn_balls: # Se un elemento non è presente nella lista drawn_balls (palline pescate), l'esperimento non è riuscito e il ciclo viene interrotto
                 success = False
                 break
-            drawn_balls.remove(ball)
-        # Il ciclo for itera su expected_balls_list e verifica se ogni elemento di expected_balls_list è presente in drawn_balls tramite un'istruzione condizionale if. Se un elemento non è presente in drawn_balls, significa che l'esperimento non è riuscito e la variabile successful_experiment viene impostata su False e il ciclo viene interrotto con l'istruzione break.
-        # In ogni caso, alla fine di ogni iterazione del ciclo viene rimosso l'elemento corrente di expected_balls_list dalla lista drawn_balls, in modo che se un colore è stato pescato più di una volta in questo esperimento, venga considerato solo una volta.
+            drawn_balls.remove(ball) # viene rimosso l'elemento corrente di expected_balls_list dalla lista drawn_balls, in modo che se un colore è stato pescato più di una volta in questo esperimento, venga considerato solo una volta
         if success:
             successful_experiments += 1
     return successful_experiments / num_experiments
